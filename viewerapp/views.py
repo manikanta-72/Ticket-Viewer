@@ -15,10 +15,7 @@ def index(request):
     tickets = requests.get("https://{0}.zendesk.com/api/v2/tickets/".format(ZENDESK_SUBDOMAIN), auth=(ZENDESK_USERNAME,ZENDESK_PASSWORD))
 
     if tickets.status_code != requests.codes.ok:
-        return render(request,'error.html',{})
-    #print(type(tickets))
-    #return render(request,'index.html',{'tickets':tickets})
-    #return render(request,'index.html',tickets)    
+        return render(request,'login_error.html',{})  
     tickets = tickets.json()
     paginator = Paginator(tickets['tickets'],25)
 
@@ -28,7 +25,7 @@ def index(request):
     
 
 def ticket_by_id(request, ticket_id):
-    #ticket = Ticket.objects.get(pk=ticket_id)
     ticket = requests.get("https://{0}.zendesk.com/api/v2/tickets/{1}.json".format(ZENDESK_SUBDOMAIN,ticket_id), auth=(ZENDESK_USERNAME,ZENDESK_PASSWORD)).json()
-    #return render(request, 'ticket_by_id.html', {'ticket':ticket})
+    if ticket.status_code != requests.codes.ok:
+        return render(request,'page_error.html',{}) 
     return render(request, 'ticket_by_id.html', ticket)

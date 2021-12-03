@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_tags %}
 {% block title %} Tickets {% endblock %}
 {% block content %}
 <table class="styled-table">
@@ -22,8 +23,8 @@
         <td>{{ticket.priority}}</td>
         <td>{{ticket.status}}</td>
         <td>{{ticket.assignee_id}}</td>
-        <td>{{ticket.created_at}}</td>
-        <td>{{ticket.updated_at}}</td>
+        <td>{{ticket.created_at | date_time}}</td>
+        <td>{{ticket.updated_at | date_time}}</td>
         <td>{{ticket.due_at}}</td>
     </tr>
     {% endfor %}

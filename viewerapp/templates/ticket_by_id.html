@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_tags %}
 {% block title %} Ticket #{{ticket.id}} {% endblock %}
 {% block content %}
 <div class="ticket">
@@ -27,11 +28,11 @@
     </tr>
     <tr>
         <td>Created At</td>
-        <td>{{ticket.created_at}}</td>
+        <td>{{ticket.created_at | date_time}}</td>
     </tr>
     <tr>
         <td>Updated At</td>
-        <td>{{ticket.updated_at}}</td>
+        <td>{{ticket.updated_at | date_time}}</td>
     </tr>
     <tr>
         <td>Due At</td>

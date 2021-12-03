@@ -1,6 +1,6 @@
 .header {
     overflow: hidden;
-    background-color: #6e099c;
+    background-color: #1F2833;
     padding: 20px 10px;
     min-width: 200px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -13,7 +13,7 @@
 
 .header a {
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -35,15 +35,6 @@
   
 .header-right {
   float: right;
-}
-  
-.footer {
-  overflow: hidden;
-  background-color: #009879;
-  padding: 20px 10px;
-  min-width: 200px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
 }
 
 @media screen and (max-width: 500px) {
@@ -71,8 +62,8 @@
 }
   
 .styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
+    background-color: #66fcf1;
+    color: black;
     text-align: left;
 }
   
@@ -90,17 +81,17 @@
 }
   
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #66fcf1;
 }
   
 .styled-table tbody tr.active-row {
     font-weight: bold;
-    color: #009879;
+    color: #66fcf1;
 }
   
 .ticket h2 {
-    background-color: #009879;
-    color: #ffffff;
+    background-color: #66fcf1;
+    color: black;
     text-align: left;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     padding: 12px 15px;
@@ -110,4 +101,9 @@
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 200px;
+}
+
+.pagination{
+  background-color: #66fcf1;
+  color: black;
 }

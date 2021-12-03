@@ -6,6 +6,10 @@
     <h2> Ticket #{{ticket.id}}</h2>
     <tbody>
     <tr>
+        <td>Type</td>
+        <td>{{ticket.type}}</td>
+    </tr>
+    <tr>
         <td>Subject</td>
         <td>{{ticket.subject}}</td>
     </tr>
@@ -28,6 +32,14 @@
     <tr>
         <td>Updated At</td>
         <td>{{ticket.updated_at}}</td>
+    </tr>
+    <tr>
+        <td>Due At</td>
+        <td>{{ticket.due_at}}</td>
+    </tr>
+    <tr>
+        <td>Tags</td>
+        <td>{{ticket.tags}}</td>
     </tr>
     </tbody>
     </table>

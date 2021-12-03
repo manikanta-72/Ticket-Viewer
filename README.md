@@ -11,6 +11,10 @@ You check out my project by following the below mentioned guidelines
 6. You can list of tickets in the web application
 7. You can futher view a particular ticket details by clicking on the id
 
+TESTING:
+You can Test the application using test cases in viewerapp/tests/ folder
+To run these test cases enter "python manage.py test viewerapp" in your terminal
+
 The following are the screenshots of the application views
 1. First Page
    ![alt text](https://github.com/manikanta-72/Ticket-Viewer/blob/master/app_firstpage_view.png?raw=true)

@@ -10,3 +10,7 @@ You check out my project by following the below mentioned guidelines
    Generally development server "http://127.0.0.1:8000/"
 6. You can list of tickets in the web application
 7. You can futher view a particula ticket by clicking on the id
+
+The following are the screenshots of the application views
+1. First Page
+   

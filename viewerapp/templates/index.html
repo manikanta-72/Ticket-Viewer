@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %} Tickets {% endblock %}
+{% block content %}
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Ticket</th>
+        <th>Summary</th>
+        <th>Status</th>
+        <th>Assignee</th>
+        <th>Created</th>
+        <th>Last Updated</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ticket in page_obj %}
+    <tr>
+        <td><a href="/ticket/{{ticket.id}}">{{ticket.id}}</td>
+        <td>{{ticket.subject}}</td>
+        <td>{{ticket.status}}</td>
+        <td>{{ticket.assignee_id}}</td>
+        <td>{{ticket.created_at}}</td>
+        <td>{{ticket.updated_at}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<!--
+<div class="pagination footer">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+</div>
+-->
+<!-- For page navigation links --
+<center>
+    <div class="pagination" style="width: fit-content;">
+        <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1" class="page-link" style="display: inline;">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link" style="display: inline;">previous</a>
+        {% endif %}
+    
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+    
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link" style="display: inline;">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link" style="display: inline;">last &raquo;</a>
+        {% endif %}
+        </span>
+    </div>
+</center>
+
+-->
+
+<center>
+    {% if page_obj.has_other_pages %}
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+      <li style="display: inline-block; zoom: 1;*display:inline;"><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled" style="display: inline-block; zoom: 1;*display:inline;"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in page_obj.paginator.page_range %}
+      {% if users.number == i %}
+        <li class="active" style="display: inline-block; zoom: 1;*display:inline;"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li style="display: inline-block; zoom: 1;*display:inline;"><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li style="display: inline-block; zoom: 1;*display:inline;"><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled" style="display: inline-block; zoom: 1;*display:inline;"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</center>
+{% endblock %}

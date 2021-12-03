@@ -25,7 +25,7 @@ def index(request):
     
 
 def ticket_by_id(request, ticket_id):
-    ticket = requests.get("https://{0}.zendesk.com/api/v2/tickets/{1}.json".format(ZENDESK_SUBDOMAIN,ticket_id), auth=(ZENDESK_USERNAME,ZENDESK_PASSWORD)).json()
+    ticket = requests.get("https://{0}.zendesk.com/api/v2/tickets/{1}.json".format(ZENDESK_SUBDOMAIN,ticket_id), auth=(ZENDESK_USERNAME,ZENDESK_PASSWORD))
     if ticket.status_code != requests.codes.ok:
         return render(request,'page_error.html',{}) 
-    return render(request, 'ticket_by_id.html', ticket)
+    return render(request, 'ticket_by_id.html', ticket.json())

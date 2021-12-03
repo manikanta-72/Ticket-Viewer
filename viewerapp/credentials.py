@@ -1,5 +1,5 @@
 # Zendesk settings
 # input your credentials here.
-ZENDESK_SUBDOMAIN = ''
-ZENDESK_USERNAME = ''
-ZENDESK_PASSWORD = ''
+ZENDESK_SUBDOMAIN = 'XXX'
+ZENDESK_USERNAME = 'XXX'
+ZENDESK_PASSWORD = 'XXX'
